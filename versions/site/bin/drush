@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+SITE=$(drushenv version-file)
+DRUSH=$(dirname $SITE)
+exec "$DRUSH/vendor/drush/drush/drush" "$@"

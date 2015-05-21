@@ -1,9 +1,11 @@
 /plugins
 /shims
 /version
-/versions
 /sources
 /cache
 /libexec/*.dylib
 /src/Makefile
 /src/*.o
+
+/versions/*
+!/versions/site/
