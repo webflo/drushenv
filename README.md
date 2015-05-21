@@ -1,6 +1,8 @@
 # Drushenv
 
-A command line tool to manage local drush installations, similar to drushenv or phpenv.
+A command line tool to manage local drush installations, similar to [rbenv](https://github.com/sstephenson/rbenv) or [phpenv](https://github.com/phpenv/phpenv).
+
+Build with https://github.com/mislav/everyenv
 
 ---
 
