@@ -1,0 +1,36 @@
+#!/usr/bin/env sh -e
+
+if [ $# -eq 0 ]
+  then
+    echo "Drush install commmand"
+    echo ""
+    echo "Examples:"
+    echo "  drushenv install '6' '~6.0'"
+    echo "  drushenv install '7' '~7.0'"
+    echo "  drushenv install '8' '~8.0@dev'"
+    exit 0
+fi
+
+if [ -z "$1" ]
+  then
+    echo "No drush version alias supplied"
+    exit 1
+fi
+
+if [ -z "$2" ]
+  then
+    echo "No composer version constraint supplied"
+    exit 1
+fi
+
+echo "Drush version alias: $1"
+echo "Composer version constraint $2"
+
+prefix=$(drushenv prefix)
+
+mkdir -p "$prefix/.drushenv/versions/$1"
+cd "$prefix/.drushenv/versions/$1"
+
+touch composer.json
+composer config bin-dir bin/
+composer require drush/drush $2
