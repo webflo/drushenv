@@ -26,10 +26,10 @@ fi
 echo "Drush version alias: $1"
 echo "Composer version constraint $2"
 
-prefix=$(drushenv prefix)
+DRUSHENV_ROOT=$(drushenv root)
 
-mkdir -p "$prefix/.drushenv/versions/$1"
-cd "$prefix/.drushenv/versions/$1"
+mkdir -p "$DRUSHENV_ROOT/versions/$1"
+cd "$DRUSHENV_ROOT/versions/$1"
 
 touch composer.json
 composer config bin-dir bin/
